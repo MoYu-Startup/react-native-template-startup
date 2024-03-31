@@ -1,0 +1,22 @@
+{
+  "name": "react-native-template-startup",
+  "version": "0.0.1",
+  "description": "React Native Template for a quick start",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MoYu-Startup/react-native-template-startup.git"
+  },
+  "keywords": [
+    "react-native",
+    "template"
+  ],
+  "author": "Dppo <xiaogao235@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MoYu-Startup/react-native-template-startup/issues"
+  },
+  "homepage": "https://github.com/MoYu-Startup/react-native-template-startup#readme"
+}

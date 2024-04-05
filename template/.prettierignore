@@ -1,0 +1,16 @@
+# react-native
+.bundle
+__tests__
+android
+ios
+vendor
+metro.config.js
+
+# vite
+dist
+
+# electron
+dist-electron
+
+# tauri
+src-tauri

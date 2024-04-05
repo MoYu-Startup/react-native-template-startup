@@ -1,0 +1,22 @@
+/* These styles make the body full-height */
+html,
+body {
+  height: 100%;
+}
+/* These styles disable body scrolling if you are using <ScrollView> */
+body {
+  overflow: hidden;
+}
+/* These styles make the root element full-height */
+#root {
+  display: flex;
+  height: 100%;
+}
+
+/* 禁用选择文本 */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

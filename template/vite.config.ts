@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import commonjs from 'vite-plugin-commonjs';
+import electron from 'vite-plugin-electron/simple';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -61,6 +62,17 @@ export default defineConfig({
         ],
       },
     }),
+    // electron
+    process.env.TYPE === 'electron' &&
+      electron({
+        main: {
+          entry: 'electron/main.ts',
+        },
+        // Optional: input must be use absolute path
+        preload: {
+          input: __dirname + '/electron/preload.ts',
+        },
+      }),
   ],
   resolve: {
     extensions,

@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-bootsplash/ios/RNBootSplash.mm b/node_modules/react-native-bootsplash/ios/RNBootSplash.mm
+index 56a8a61..1b29ef4 100755
+--- a/node_modules/react-native-bootsplash/ios/RNBootSplash.mm
++++ b/node_modules/react-native-bootsplash/ios/RNBootSplash.mm
+@@ -108,7 +108,7 @@ + (void)initWithStoryboard:(NSString * _Nonnull)storyboardName
+       _loadingView.hidden = NO;
+ 
+ #if RCT_NEW_ARCH_ENABLED
+-      [_rootView disableActivityIndicatorAutoHide:YES];
++//      [_rootView disableActivityIndicatorAutoHide:YES];
+       [_rootView setLoadingView:_loadingView];
+ #else
+       [_rootView addSubview:_loadingView];

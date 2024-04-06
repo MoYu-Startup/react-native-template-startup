@@ -19,7 +19,8 @@
     "clean": "rimraf dist dist-electron src-tauri/target && react-native-clean-project",
     "post-icon": "iconset create && npx react-native generate-bootsplash src/assets/images/logo_shadow.png --platforms=android,ios,web",
     "post-display-name": "set-display-name",
-    "post-version": "react-native-version --never-amend"
+    "post-version": "react-native-version --never-amend",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.20",
@@ -60,6 +61,8 @@
     "icon-set-creator": "^1.2.6",
     "jest": "^29.6.3",
     "node-update-dependencies": "^1.0.6",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "2.8.8",
     "react-native-clean-project": "^4.0.3",
     "react-native-display-name": "^0.0.4",
@@ -97,7 +100,9 @@
         "react-native-clean-project",
         "icon-set-creator",
         "react-native-version",
-        "react-native-display-name"
+        "react-native-display-name",
+        "patch-package",
+        "postinstall-postinstall"
       ]
     },
     "web": {

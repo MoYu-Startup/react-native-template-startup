@@ -1,0 +1,20 @@
+diff --git a/node_modules/@sentry/react-native/dist/js/tracing/timetodisplaynative.js b/node_modules/@sentry/react-native/dist/js/tracing/timetodisplaynative.js
+index 23b433f..cafd514 100644
+--- a/node_modules/@sentry/react-native/dist/js/tracing/timetodisplaynative.js
++++ b/node_modules/@sentry/react-native/dist/js/tracing/timetodisplaynative.js
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { requireNativeComponent, UIManager, View } from 'react-native';
++import { UIManager, View } from 'react-native';
+ const RNSentryOnDrawReporterClass = 'RNSentryOnDrawReporter';
+ export const nativeComponentExists = UIManager.hasViewManagerConfig
+     ? UIManager.hasViewManagerConfig(RNSentryOnDrawReporterClass)
+@@ -19,7 +19,7 @@ let RNSentryOnDrawReporter;
+ export const getRNSentryOnDrawReporter = () => {
+     if (!RNSentryOnDrawReporter) {
+         RNSentryOnDrawReporter = nativeComponentExists
+-            ? requireNativeComponent(RNSentryOnDrawReporterClass)
++            ? require('react-native').requireNativeComponent(RNSentryOnDrawReporterClass)
+             : RNSentryOnDrawReporterNoop;
+     }
+     return RNSentryOnDrawReporter;

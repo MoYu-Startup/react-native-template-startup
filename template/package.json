@@ -18,6 +18,7 @@
     "electron": "cross-env TYPE=electron yarn web",
     "clean": "rimraf dist dist-electron src-tauri/target && react-native-clean-project",
     "post-icon": "iconset create && npx react-native generate-bootsplash src/assets/images/logo_shadow.png --platforms=android,ios,web",
+    "post-display-name": "set-display-name",
     "post-version": "react-native-version --never-amend"
   },
   "dependencies": {
@@ -60,6 +61,7 @@
     "node-update-dependencies": "^1.0.6",
     "prettier": "2.8.8",
     "react-native-clean-project": "^4.0.3",
+    "react-native-display-name": "^0.0.4",
     "react-native-version": "^4.0.0",
     "react-test-renderer": "18.2.0",
     "rimraf": "^5.0.5",
@@ -67,7 +69,8 @@
     "typescript": "5.0.4",
     "vite": "^5.2.8",
     "vite-plugin-commonjs": "^0.10.1",
-    "vite-plugin-electron": "^0.28.4"
+    "vite-plugin-electron": "^0.28.4",
+    "vite-plugin-html": "^3.2.2"
   },
   "engines": {
     "node": ">=18"
@@ -91,7 +94,8 @@
         "rimraf",
         "react-native-clean-project",
         "icon-set-creator",
-        "react-native-version"
+        "react-native-version",
+        "react-native-display-name"
       ]
     },
     "web": {
@@ -105,7 +109,8 @@
         "@vitejs/plugin-react",
         "babel-plugin-react-native-web",
         "@babel/plugin-proposal-export-namespace-from",
-        "vite-plugin-commonjs"
+        "vite-plugin-commonjs",
+        "vite-plugin-html"
       ]
     },
     "electron": {

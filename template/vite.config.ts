@@ -2,8 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import commonjs from 'vite-plugin-commonjs';
 import electron from 'vite-plugin-electron/simple';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 const isProduction = process.env.NODE_ENV === 'production';
+const APP_VERSION = require('./package.json').version;
+const APP_NAME = require('./app.json').displayName;
 
 const extensions = [
   '.web.js',
@@ -28,7 +31,8 @@ export default defineConfig({
     clearImmediate: 'window.clearTimeout',
     setImmediate: 'window.setTimeout',
     __DEV__: !isProduction,
-    APP_VERSION: JSON.stringify(require('./package.json').version),
+    APP_VERSION: JSON.stringify(APP_VERSION),
+    APP_NAME: JSON.stringify(APP_NAME),
   },
   build: {
     // 解决node_modules中第三方库使用require语法问题
@@ -49,6 +53,13 @@ export default defineConfig({
     },
   },
   plugins: [
+    createHtmlPlugin({
+      inject: {
+        data: {
+          title: APP_NAME,
+        },
+      },
+    }),
     // 允许web项目中使用require语法，与react-native端语法保持一致
     commonjs(),
     react({
